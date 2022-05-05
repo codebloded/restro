@@ -6,6 +6,7 @@ import LogoFlex from "./components/LogoFlex";
 import Lists from "./components/Lists";
 import Orders from "./components/Orders";
 import About from "./components/About";
+import AdminPanel from "./components/AdminPanel";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Lists />
       <Orders />
       <About />
+      <AdminPanel />
     </div>
   );
 }
