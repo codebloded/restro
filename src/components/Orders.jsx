@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
+import { useCart } from "../context/cart";
 
 const Info = () => {
   return (
@@ -23,6 +24,7 @@ const Info = () => {
 };
 
 export default function Orders() {
+  const items = useCart();
   return (
     <div>
       <Container
@@ -35,10 +37,9 @@ export default function Orders() {
           marginBottom: "10px",
         }}
       >
-        <Info />
-        <Info />
-        <Info />
-        <Info />
+        {items.map((item, index) => (
+          <Info />
+        ))}
       </Container>
       <h4
         style={{
@@ -48,7 +49,7 @@ export default function Orders() {
           paddingRight: "10px",
         }}
       >
-        Your Orders
+        Your Orders {items.length}
       </h4>
     </div>
   );
